@@ -15,6 +15,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag paulgrav/opentelemetry-collector:$(date +%s)
+      run: docker build . --file Dockerfile --tag docker.pkg.github.com/paulgrav/opentelemetry-collector-arm64/opentelemetry-collector:$(date +%s)
     - name: Build the Docker image
-      run: docker build . --file Dockerfile.contrib --tag paulgrav/opentelemetry-collector-contrib:$(date +%s)
+      run: docker build . --file Dockerfile.contrib --tag docker.pkg.github.com/paulgrav/opentelemetry-collector-arm64/opentelemetry-collector-contrib:$(date +%s)
