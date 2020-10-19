@@ -10,18 +10,20 @@ jobs:
       - name: Check out the repo
         uses: actions/checkout@v2
       - name: Push to GitHub Packages
-        uses: docker/build-push-action@v1
+        uses: docker/build-push-action@v1.1.1
         with:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
           registry: docker.pkg.github.com
+          dockerfile: Dockerfile.contrib
           repository: paulgrav/opentelemetry-collector-arm64/opentelemetry-collector-contrib
           tag_with_ref: true
       - name: Push to GitHub Packages
-        uses: docker/build-push-action@v1
+        uses: docker/build-push-action@v1.1.1
         with:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
           registry: docker.pkg.github.com
+          dockerfile: Dockerfile
           repository: paulgrav/opentelemetry-collector-arm64/opentelemetry-collector
           tag_with_ref: true
